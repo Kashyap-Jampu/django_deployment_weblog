@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<section class="breadcrumb_area">
+    <img class="breadcrumb_shap" src="img/banner_bg.png" alt="">
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">create a new post</h1>
+
+        </div>
+    </div>
+</section>
+
+<section class="sign_in_area bg_color sec_pad">
+    <div class="container">
+        <div class="sign_info">
+            <div class="row">
+
+                <div class="col-lg-7">
+                    <div class="login_info">
+                        <h2 class="f_p f_600 f_size_24 t_color3 mb_40">Fill the details</h2>
+                        <form action="#" class="login-form sign-in-form" enctype="multipart/form-data" method="POST">{% csrf_token %}
+                            <div class="form-group text_box">
+                                <label class="f_p text_c f_400">Your Post title</label>
+                                <input type="text" placeholder="Your Post title" name="post_title" required>
+                            </div>
+                            <div class="form-group text_box">
+                                <label class="f_p text_c f_400">Enter Tag</label>
+                                <input type="text" placeholder="Enter Tag" name="tag" required>
+                            </div>
+
+                            <div class="form-group text_box">
+                            <label class="form-label" for="customFile">Upload thumbnail</label>
+                            <div class="container">
+
+
+                             <input type="file" class="form-control" name='thumbnail_img'   id="customFile"  /></div>
+                             </div>
+
+                             <div class="col-md-6 form-group">
+                                 <input type="hidden"   name='id' value="{{ user.id }}">
+                             </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group text_box">
+                                    <textarea name="post_disp" id="message" cols="30" rows="10" placeholder="Write your Post Here"></textarea>
+                                </div>
+                            </div>
+                              <label class="form-label" for="customFile">Select Category</label><br>
+                            <select name="cati" >
+                              {% for c in cat%}
+                              <option   value="{{ c.id }}"  >{{ c.name }}</option>
+                              {% endfor %}
+                            </select><br><br>
+
+
+
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <button type="submit" class="btn_three">Save</button>
+
+
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  {% endblock content %}

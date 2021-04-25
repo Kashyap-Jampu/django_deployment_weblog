@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Register</title>
+{% endblock title %}
+{% block content%}
+
+        <section class="breadcrumb_area">
+            <img class="breadcrumb_shap" src="img/banner_bg.png" alt="">
+            <div class="container">
+                <div class="breadcrumb_content text-center">
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Sign Up</h1>
+                    <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
+                </div>
+            </div>
+        </section>
+        <section class="sign_in_area bg_color sec_pad">
+            <div class="container">
+                <div class="sign_info">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="sign_info_content">
+                                <h3 class="f_p f_600 f_size_24 t_color3 mb_40">Allready have an account?</h3>
+                                <h2 class="f_p f_400 f_size_30 mb-30">Login now and<br> starting using our <br><span class="f_700">amazing</span> products</h2>
+                                <ul class="list-unstyled mb-0">
+                                    <li><i class="ti-check"></i> Premium Access to all Products</li>
+                                    <li><i class="ti-check"></i> Free Testing Tools</li>
+                                    <li><i class="ti-check"></i> Unlimited User Accounts</li>
+                                </ul>
+                                <button type="submit" class="btn_three sign_btn_transparent">Sign In</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="login_info">
+                                <h2 class="f_p f_600 f_size_24 t_color3 mb_40">Sign Up</h2>
+                                <form action="#" class="login-form sign-in-form" method="POST">{% csrf_token %}
+                                    <div class="form-group text_box">
+                                        <label class="f_p text_c f_400">Your Name</label>
+                                        <input type="text" placeholder="Enter Your Name" name="name" required>
+                                    </div>
+                                    <div class="form-group text_box">
+                                        <label class="f_p text_c f_400">Email Address</label>
+                                        <input type="email" placeholder="Enter Email" name="email" required>
+                                        {% if messages %}
+                                        <ul class="messages">
+                                            {% for message in messages %}
+                                            <li{% if message.tags %} class={{ message.tags }}"{% endif %}>{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group text_box">
+                                        <label class="f_p text_c f_400">Password</label>
+                                        <input type="password" placeholder="******" name="password" required>
+                                    </div>
+                                    <div class="extra mb_20">
+                                        <div class="checkbox remember">
+                                            <label>
+                                                <input type="checkbox"> I agree to terms and conditions of this website
+                                            </label>
+                                        </div>
+                                        <!--//check-box-->
+                                        <div class="forgotten-password">
+                                            <a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button type="submit" class="btn_three">Sign Up</button>
+                                        <div class="social_text d-flex ">
+                                            <div class="lead-text">Or Sign up Using</div>
+                                            <ul class="list-unstyled social_tag mb-0">
+                                                <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#"><i class="ti-facebook"></i></a></li>
+                                                <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#"><i class="ti-twitter-alt"></i></a></li>
+                                                <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#"><i class="ti-google"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer_area footer_area_four f_bg">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget company_widget">
+                                <a href="http://droitthemes.com/html/saasland/index.html" class="f-logo"><img src="img/logo.png" srcset="img/logo2x.png 2x" alt=""></a>
+                                <div class="widget-wrap">
+                                    <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Email:</span> <a href="mailto:saasland@gmail.com" class="f_400">saasland@gmail.com</a></p>
+                                    <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Phone:</span> <a href="tel:948256347968" class="f_400">+948 256 347 968</a></p>
+                                </div>
+                                <form action="http://droitthemes.com/html/saasland/sign-up-1.html#" class="f_subscribe mailchimp" method="post" novalidate="true">
+                                    <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                    <button class="btn btn-submit" type="submit"><i class="ti-arrow-right"></i></button>
+                                    <p class="mchimp-errmessage" style="display: none;"></p>
+                                    <p class="mchimp-sucmessage" style="display: none;"></p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_40">
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">About Us</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Company</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Leadership</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Diversity</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Jobs</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Press</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Wavelength</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget">
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Workflow Solutions</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Project Management</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Agile</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Task Management</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Reporting</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Work Tracking</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">See All Uses</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget">
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Team Solutions</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Engineering</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Designers</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Sales</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Developers</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">Marketing</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/sign-up-1.html#">See All Teams</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          {% endblock content%}

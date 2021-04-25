@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<section class="breadcrumb_area">
+    <img class="breadcrumb_shap" src="{% static 'img/banner_bg.png' %}" alt="">
+    <div class="container">
+        <div class="breadcrumb_content text-center">
+            <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">edit your profile</h1>
+
+        </div>
+    </div>
+
+</section>
+<div class="container">
+
+<div class="col-lg-7">
+<form action="#" class="login-form sign-in-form" enctype="multipart/form-data" method="POST">{% csrf_token %}
+
+    <div class="form-group text_box">
+    <label class="form-label" for="customFile">Upload thumbnail</label>
+    <div class="container">
+      <div class="container">
+
+
+       <input type="file" class="form-control" name='profile_img'   id="customFile"  /></div>
+       </div>
+       <div class="col-md-6 form-group">
+           <input type="hidden"   name='u_id' value="{{ user.id }}">
+       </div>
+
+
+      <div class="d-flex justify-content-between align-items-center">
+
+          <button type="submit" class="btn_three">Save</button>
+
+
+      </div>
+
+
+
+
+  </form>
+  </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

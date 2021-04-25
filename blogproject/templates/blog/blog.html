@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+
+
+
+
+
+
+
+        <section class="breadcrumb_area">
+            <img class="breadcrumb_shap" src="{% static 'img/banner_bg.png' %}" alt="">
+            <div class="container">
+                <div class="breadcrumb_content text-center">
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Blog List</h1>
+                    <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse
+                        pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="blog_area sec_pad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                      {% for post in posts %}
+                        <div class="blog_list_item mb_50">
+                            <img class="img-fluid" src="{{ post.thumbnail.url }}" alt="">
+                            <div class="blog_content">
+                                <div class="post_date">
+                                    <h2>{{ post.posted_at|date:'d' }}<span>{{ post.posted_at|date:'F' }}</span></h2>
+                                </div>
+                                <div class="entry_post_info">
+                                    By: <a href="#">{{ post.user }}</a>
+                                    <a href="#">2 Comments</a>
+                                    <a href="#">{{ post.category }}</a>
+                                </div>
+                                <a href="/post/{{ post.title }}">
+                                    <h5 class="f_p f_size_20 f_500 t_color mb_20">{{ post.title }}</h5>
+                                </a>
+                                <p class="f_400 mb_20">{{ post.discreption|truncatewords:1}}</p>
+                                <a href="/{{ post.title }}" class="learn_btn_two">Read More <i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+
+
+
+
+
+
+
+                        <ul class="list-unstyled page-numbers shop_page_number text-left mt_30">
+                            <li><span aria-current="page" class="page-numbers current">1</span></li>
+                            <li><a class="page-numbers" href="http://droitthemes.com/html/saasland/blog-list.html#">2</a></li>
+                            <li><a class="next page-numbers" href="http://droitthemes.com/html/saasland/blog-list.html#"><i class="ti-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar">
+                            <div class="widget sidebar_widget widget_search">
+                                <form action="http://droitthemes.com/html/saasland/blog-list.html#" class="search-form input-group">
+                                    <input type="search" class="form-control widget_input" placeholder="Search">
+                                    <button type="submit"><i class="ti-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="widget sidebar_widget widget_recent_post mt_60">
+                                <div class="widget_title">
+                                    <h3 class="f_p f_size_20 t_color3">Recent posts</h3>
+                                    <div class="border_bottom"></div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="{% static 'img/post_1.jpg' %}" alt="">
+                                    <div class="media-body">
+                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
+                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
+                                                aenean.</h3>
+                                        </a>
+                                        <div class="entry_post_info">
+                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
+                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="{% static 'img/post_2.jpg' %}" alt="">
+                                    <div class="media-body">
+                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
+                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
+                                                aenean.</h3>
+                                        </a>
+                                        <div class="entry_post_info">
+                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
+                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="{% static 'img/post_3.jpg' %}" alt="">
+                                    <div class="media-body">
+                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
+                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
+                                                aenean.</h3>
+                                        </a>
+                                        <div class="entry_post_info">
+                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
+                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="{% static 'img/post_4.jpg' %}" alt="">
+                                    <div class="media-body">
+                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
+                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
+                                                aenean.</h3>
+                                        </a>
+                                        <div class="entry_post_info">
+                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
+                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget sidebar_widget widget_categorie mt_60">
+                                <div class="widget_title">
+                                    <h3 class="f_p f_size_20 t_color3">Categories</h3>
+                                    <div class="border_bottom"></div>
+                                </div>
+                                <ul class="list-unstyled">
+                                  {% for post in posts %}
+                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>{{ post.categoryy }}</span><em>(54)</em></a> </li>
+                                    {% endfor %}
+
+                            </div>
+                            <div class="widget sidebar_widget widget_tag_cloud mt_60">
+                                <div class="widget_title">
+                                    <h3 class="f_p f_size_20 t_color3">Tags</h3>
+                                    <div class="border_bottom"></div>
+                                </div>
+                                <div class="post-tags">
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Web Design</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Saas</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Cooling System</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Corporate</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Software</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Landing</a>
+                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Wheels</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        {% endblock content %}
+
+
+
+
+
+
+    <!--    <footer class="footer_area footer_area_four f_bg">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget company_widget">
+                                <a href="http://droitthemes.com/html/saasland/index.html" class="f-logo"><img src="img/logo.png" srcset="img/logo2x.png 2x" alt=""></a>
+                                <div class="widget-wrap">
+                                    <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Email:</span> <a href="mailto:saasland@gmail.com" class="f_400">saasland@gmail.com</a></p>
+                                    <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Phone:</span> <a href="tel:948256347968" class="f_400">+948 256 347 968</a></p>
+                                </div>
+                                <form action="http://droitthemes.com/html/saasland/blog-list.html#" class="f_subscribe mailchimp" method="post" novalidate="true">
+                                    <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                    <button class="btn btn-submit" type="submit"><i class="ti-arrow-right"></i></button>
+                                    <p class="mchimp-errmessage" style="display: none;"></p>
+                                    <p class="mchimp-sucmessage" style="display: none;"></p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_40">
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">About Us</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Company</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Leadership</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Diversity</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Jobs</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Press</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Wavelength</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget">
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Workflow Solutions</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Project Management</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Agile</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Task Management</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Reporting</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Work Tracking</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">See All Uses</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget">
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Team Solutions</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Engineering</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Designers</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Sales</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Developers</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Marketing</a></li>
+                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">See All Teams</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5 col-sm-6">
+                            <p class="mb-0 f_400">Copyright © 2018 Desing by <a href="http://droitthemes.com/html/saasland/blog-list.html#">DroitThemes</a></p>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-sm-6">
+                            <div class="f_social_icon_two text-center">
+                                <a href="http://droitthemes.com/html/saasland/blog-list.html#"><i class="ti-facebook"></i></a>
+                                <a href="http://droitthemes.com/html/saasland/blog-list.html#"><i class="ti-twitter-alt"></i></a>
+                                <a href="http://droitthemes.com/html/saasland/blog-list.html#"><i class="ti-vimeo-alt"></i></a>
+                                <a href="http://droitthemes.com/html/saasland/blog-list.html#"><i class="ti-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <ul class="list-unstyled f_menu text-right">
+                                <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Terms of Use</a></li>
+                                <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="{% static 'js/jquery-3.2.1.min.js.download' %}"></script>
+    <script src="{% static 'js/propper.js.download' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js.download' %}"></script>
+    <script src="{% static 'js/wow.min.js.download' %}"></script>
+    <script src="{% static 'js/jquery.parallax-scroll.js.download' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js.download' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js.download' %}"></script>
+    <script src="{% static 'js/isotope-min.js.download' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js.download' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js.download' %}"></script>
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js.download' %}"></script>
+    <script src="{% static 'js/plugins.js.download' %}"></script>
+    <script src="{% static 'js/slick.js.download' %}"></script>
+    <script src="{% static 'js/main.js.download' %}"></script>
+  </body>
+  </html>
+
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" __idm_frm__="1079" src="img/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div></body></html> -->
